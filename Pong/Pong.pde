@@ -2,7 +2,8 @@
 //2-1
 //Pong!
 //Add intro screen
-//7E
+//7J
+//make intro buttons do single/double
 
 import ddf.minim.*;
 import ddf.minim.analysis.*;
@@ -38,9 +39,11 @@ float vx, vy, a; //BALL VELOCITY
 //KEYBOARD VARIABLES
 boolean wkey, skey, upkey, downkey;
 
+//SCORING
+int leftscore, rightscore, timer = 100, counter = 0;
 
 void setup() {
-  size(800, 800, P2D);
+  size(1000, 800, P2D);
   mode = INTRO;
   textAlign(CENTER, CENTER);
   imageMode(CENTER);
@@ -68,11 +71,12 @@ void setup() {
   
   //BALL VELOCITY INITIALIZATION
   a = random(0, 2*PI);
-  vx = 4*cos(a);
-  vy = 4*sin(a);
+  vx = 8*cos(a);
+  vy = 8*sin(a);
   
-  
-  
+  //FONT LOADING
+  PFont font = createFont("Strong.ttf", 200);
+  textFont(font);
 }
 
 
